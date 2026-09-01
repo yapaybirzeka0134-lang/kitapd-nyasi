@@ -1,0 +1,1 @@
+import type { MetadataRoute } from "next"; import { books } from "@/lib/data"; export default function sitemap():MetadataRoute.Sitemap {const base=process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000"; return ["","/discover","/search",...books.map(b=>`/book/${b.slug}`)].map(url=>({url:`${base}${url}`,lastModified:new Date()}));}

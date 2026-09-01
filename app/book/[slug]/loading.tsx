@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="container grid animate-pulse gap-8 py-10 md:grid-cols-[260px_1fr]"><div className="aspect-[3/4] rounded-xl bg-zinc-200 dark:bg-zinc-800"/><div className="space-y-5"><div className="h-12 w-2/3 rounded bg-zinc-200 dark:bg-zinc-800"/><div className="h-28 rounded bg-zinc-200 dark:bg-zinc-800"/></div></main>}
