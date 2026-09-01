@@ -1,15 +1,25 @@
 # KitapDünyası
 
-Next.js App Router ve Supabase tabanlı online kitap/roman okuma platformu başlangıcı.
+Vercel üzerinde çalışan, Next.js App Router tabanlı açık katalog kitap keşif uygulaması.
 
-## Başlangıç
+## Veri ve telif yaklaşımı
 
-1. `.env.example` dosyasını `.env.local` olarak kopyalayın ve Supabase değerlerini ekleyin.
-2. `supabase/migrations/0001_initial.sql` migration dosyasını Supabase SQL Editor veya CLI ile uygulayın.
-3. `npm install && npm run dev`
+Uygulama çalışma zamanında Open Library açık kataloğundan yalnızca bibliyografik metadata ve kapak kaydı getirir. Telifli kitapların tam metni, bölümü veya EPUB/PDF dosyası üçüncü taraf sitelerden çekilmez ya da barındırılmaz. Tam metin okuyucu yalnızca kamu malı veya hak sahibi tarafından lisanslanmış içerik için etkinleştirilmelidir.
 
-`SUPABASE_SERVICE_ROLE_KEY` istemciye verilmez; yalnızca sunucu tarafındaki yönetim işleri için kullanılır.
+## Başlatma
 
-## Kapsam
+```bash
+npm install
+npm run dev
+```
 
-Katalog, keşfetme, kitap/bölüm görünümü, tema altyapısı, metadata/sitemap/robots, Supabase istemcileri, RLS şeması ve kullanıcı etkileşimleri için server action temelini içerir. Üretime geçmeden önce Supabase Auth yönlendirme URL'lerini ve Storage bucket politikalarını yapılandırın.
+`NEXT_PUBLIC_SITE_URL` değerini Vercel proje ortam değişkenlerinde üretim adresiyle ayarlayın.
+
+## Bu sürüm
+
+- Canlı katalog araması, kategori keşfi ve detay sayfası
+- Responsive açık/koyu tema
+- Yerel cihaz kitaplığı, favoriler ve okuyucu tercihleri
+- Metadata, sitemap, robots ve yükleme/hata ekranları
+
+Kimlik doğrulama, yönetici CRUD, yorumlar, puanlama ve lisanslı dosya yükleme; güvenli bir backend seçildiğinde eklenmelidir.

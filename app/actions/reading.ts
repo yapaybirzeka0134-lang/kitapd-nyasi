@@ -1,6 +1,0 @@
-"use server";
-import { revalidatePath } from "next/cache"; import { createClient } from "@/lib/supabase/server";
-async function user() { const supabase=await createClient(); const {data:{user}}=await supabase.auth.getUser(); if(!user) throw new Error("Oturum açmanız gerekiyor."); return {supabase,user}; }
-export async function setLibrary(bookId:string,status:"reading"|"want_to_read"|"completed"|"favorite") { const {supabase,user:current}=await user(); const {error}=await supabase.from("library").upsert({user_id:current.id,book_id:bookId,status},{onConflict:"user_id,book_id"}); if(error) throw error; revalidatePath("/library"); }
-export async function toggleFavorite(bookId:string, enabled:boolean) { const {supabase,user:current}=await user(); const query=enabled?supabase.from("favorites").insert({user_id:current.id,book_id:bookId}):supabase.from("favorites").delete().eq("user_id",current.id).eq("book_id",bookId); const {error}=await query; if(error) throw error; revalidatePath(`/book/${bookId}`); }
-export async function saveProgress(bookId:string,chapterId:string,progress:number) { const {supabase,user:current}=await user(); const {error}=await supabase.from("reading_progress").upsert({user_id:current.id,book_id:bookId,chapter_id:chapterId,progress,last_read_at:new Date().toISOString()},{onConflict:"user_id,book_id"}); if(error) throw error; }
