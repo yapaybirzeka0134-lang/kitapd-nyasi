@@ -1,0 +1,1 @@
+export default function Admin(){return <main className="container max-w-2xl py-16"><h1 className="text-3xl font-black">Yönetim paneli yapılandırma bekliyor</h1><p className="mt-4 leading-7 text-zinc-600 dark:text-zinc-300">Güvenli bir kimlik ve rol sağlayıcısı bağlanmadan içerik yönetimi açılmaz. Bu koruma, yetkisiz kullanıcıların kitap veya dosya eklemesini engeller.</p></main>}

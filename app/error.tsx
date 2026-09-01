@@ -1,0 +1,1 @@
+"use client"; export default function Error({reset}:{reset:()=>void}){return <main className="container py-24 text-center"><h1 className="text-3xl font-black">Bir sorun oluştu</h1><button onClick={reset} className="mt-5 rounded-lg bg-violet px-4 py-2 font-bold text-white">Tekrar dene</button></main>}

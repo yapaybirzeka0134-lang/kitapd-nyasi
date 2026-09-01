@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="container animate-pulse py-12"><div className="h-10 w-52 rounded bg-zinc-200 dark:bg-zinc-800"/><div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">{Array.from({length:8},(_,i)=><div className="aspect-[3/5] rounded-xl bg-zinc-200 dark:bg-zinc-800" key={i}/>)}</div></main>}
